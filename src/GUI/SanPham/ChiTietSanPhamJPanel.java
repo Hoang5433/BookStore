@@ -1,0 +1,457 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GUI.SanPham;
+
+import static DataThongKe.DataThongKeSanPham.DataChartSanPhamHienTaiMoiSanPham;
+import static DataThongKe.DataThongKeSanPham.DataChartSanPhamNamTruocMoiSanPham;
+import static DataThongKe.DataThongKeSanPham.DoanhThuSanPham;
+import static DataThongKe.DataThongKeSanPham.SanPhamBanRaDoanhThuTuDen;
+import static DataThongKe.DataThongKeSanPham.SanPhamDaBan;
+import static DataThongKe.DataThongKeSanPham.SanPhamDaBanThang;
+import static DataThongKe.DataThongKeSanPham.TongDoanhThuSanPham;
+import static GUI.Chart.createChart.createLineChart;
+import static GUI.Chart.createChart.createLineChart2;
+import GUI.SanPhamJPanel;
+import static GUI.SanPhamJPanel.currentSanPham;
+import static GUI.Sweet.SweetFileChooser.FileExists;
+import static GUI.Sweet.SweetFileChooser.PATH_SANPHAM;
+import static GUI.Sweet.SweetImage.readImageFromFilePath;
+import static GUI.Sweet.SweetImage.resizeImage;
+import java.awt.BorderLayout;
+import java.awt.Cursor;
+import java.awt.Image;
+import java.util.Date;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
+import static quanlycuahangsach.Currency.changeCurrency;
+
+/**
+ *
+ * @author admin
+ */
+public class ChiTietSanPhamJPanel extends javax.swing.JPanel {
+
+    /**
+     * Creates new form ChiTietSanPhamJPanel
+     */
+    ImageIcon imgAnhDaiDien;
+    public void setShadow(){
+        pnlThongTin.setShadow(1);
+    } 
+    public void setDate(){
+        dateTu.setDateFormatString("dd/MM/yyyy");
+        dateDen.setDateFormatString("dd/MM/yyyy");
+        dateTu.setDate(new Date());
+        dateDen.setDate(dateTu.getDate());
+        dateTu.setMaxSelectableDate(new Date());
+        dateDen.setMaxSelectableDate(new Date());
+    }    
+    public void setChart(){
+        String[] year = {"T1","T2","T3","T4","T5","T6","T7","T8","T9","T10","T11","T12"};
+        createLineChart2(pnlChart,DataChartSanPhamNamTruocMoiSanPham(currentSanPham.getMaSanPham()),DataChartSanPhamHienTaiMoiSanPham(currentSanPham.getMaSanPham()),year);
+    }
+    public ChiTietSanPhamJPanel() {
+        initComponents();
+        setShadow();
+        pnlQuayVe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        lblEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));     
+        dateTu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));  
+        dateDen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        setChart();
+        setData();
+        setDate();
+        
+        
+    }
+    public void setData(){
+        lblMaSanPham.setText(currentSanPham.getMaSanPham());
+        lblTenSanPham.setText(currentSanPham.getTenSanPham());
+        lblDonGia.setText(changeCurrency(currentSanPham.getGia())+"đ");
+        lblSoLuong.setText(currentSanPham.getSoLuong());
+        lblTacGia.setText(quanlycuahangsach.quanlycuahangsach.TacGiaBUS.getTenByMa(currentSanPham.getMaTacGia()));
+        lblTheLoai.setText(quanlycuahangsach.quanlycuahangsach.TheLoaiBUS.getTenByMa(currentSanPham.getMaTheLoai()));
+        lblNhaXuatBan.setText(quanlycuahangsach.quanlycuahangsach.NhaXuatBanBUS.getTenByMa(currentSanPham.getMaNhaXuatBan()));
+        if (!FileExists(PATH_SANPHAM + currentSanPham.getImageSource())) {
+            currentSanPham.setImageSource("tuoitredanggiabaonhieu.png");
+            Image imageScale = readImageFromFilePath(PATH_SANPHAM + currentSanPham.getImageSource(), 140, 130);
+            imgAnhDaiDien = new ImageIcon(imageScale);
+            lblAnh.setIcon(imgAnhDaiDien);            
+        }
+        else{
+        
+        Image imageScale = readImageFromFilePath(PATH_SANPHAM + currentSanPham.getImageSource(), 140, 130);
+        imgAnhDaiDien = new ImageIcon(imageScale);
+        lblAnh.setIcon(imgAnhDaiDien);
+        }
+        
+        lblTongSanPhamBanRa.setText(changeCurrency(Integer.toString(SanPhamDaBan(currentSanPham.getMaSanPham()))));
+        lblSanPhamBanRaThangNay.setText(changeCurrency(Integer.toString(SanPhamDaBanThang(currentSanPham.getMaSanPham())[0])));
+        lblTongDoanhThu.setText(changeCurrency(Integer.toString(TongDoanhThuSanPham(currentSanPham.getMaSanPham())[0]))+"đ");
+        lblSanPhamBanThangTruoc.setText(changeCurrency(Integer.toString(SanPhamDaBanThang(currentSanPham.getMaSanPham())[1])));
+        lblDoanhThuThangNay.setText(changeCurrency(Integer.toString(DoanhThuSanPham(currentSanPham.getMaSanPham())[0]))+"đ");
+        lblDoanhThuThangTruoc.setText(changeCurrency(Integer.toString(DoanhThuSanPham(currentSanPham.getMaSanPham())[1]))+"đ");
+        
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        pnlThongTin = new GUI.Rounded();
+        lblThongTinHoaDon = new javax.swing.JLabel();
+        lblThongTinHoaDon1 = new javax.swing.JLabel();
+        pnlThongTinPhieuNhap = new javax.swing.JPanel();
+        lblTitleMaNhaCungCap = new javax.swing.JLabel();
+        lblTitleNgayNhap = new javax.swing.JLabel();
+        lblDonGia = new javax.swing.JLabel();
+        lblTenSanPham = new javax.swing.JLabel();
+        lblSoLuong = new javax.swing.JLabel();
+        lblTitleTongTien = new javax.swing.JLabel();
+        lblTitleMaPhieuNhao1 = new javax.swing.JLabel();
+        lblTitleMaPhieuNhao2 = new javax.swing.JLabel();
+        lblTitleMaPhieuNhao3 = new javax.swing.JLabel();
+        lblTitleMaPhieuNhao4 = new javax.swing.JLabel();
+        lblMaSanPham = new javax.swing.JLabel();
+        lblTheLoai = new javax.swing.JLabel();
+        lblTacGia = new javax.swing.JLabel();
+        lblNhaXuatBan = new javax.swing.JLabel();
+        lblAnh = new javax.swing.JLabel();
+        lblEdit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        pnlChart = new javax.swing.JPanel();
+        lblDoanhThuThangNay = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblTongSanPhamBanRa = new javax.swing.JLabel();
+        lblSanPhamBanRaThangNay = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        dateDen = new com.toedter.calendar.JDateChooser();
+        dateTu = new com.toedter.calendar.JDateChooser();
+        jLabel9 = new javax.swing.JLabel();
+        lblDoanhThu = new javax.swing.JLabel();
+        lblTongDoanhThu = new javax.swing.JLabel();
+        lblSanPhamBanRa = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        lblDoanhThuThangTruoc = new javax.swing.JLabel();
+        lblSanPhamBanThangTruoc = new javax.swing.JLabel();
+        pnlQuayVe = new GUI.Rounded();
+        lblQuayVe2 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(238, 243, 247));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlThongTin.setBackground(new java.awt.Color(238, 243, 247));
+        pnlThongTin.setForeground(new java.awt.Color(238, 243, 247));
+        pnlThongTin.setPreferredSize(new java.awt.Dimension(920, 750));
+        pnlThongTin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblThongTinHoaDon.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblThongTinHoaDon.setForeground(new java.awt.Color(0, 146, 242));
+        lblThongTinHoaDon.setText("Thông tin sản phẩm");
+        pnlThongTin.add(lblThongTinHoaDon, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 14, -1, -1));
+
+        lblThongTinHoaDon1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblThongTinHoaDon1.setForeground(new java.awt.Color(0, 146, 242));
+        lblThongTinHoaDon1.setText("Thống kê");
+        pnlThongTin.add(lblThongTinHoaDon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        pnlThongTinPhieuNhap.setBackground(new java.awt.Color(255, 255, 255));
+        pnlThongTinPhieuNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitleMaNhaCungCap.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleMaNhaCungCap.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleMaNhaCungCap.setText("Tên sản phẩm:");
+        pnlThongTinPhieuNhap.add(lblTitleMaNhaCungCap, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 20));
+
+        lblTitleNgayNhap.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleNgayNhap.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleNgayNhap.setText("Đơn giá:");
+        pnlThongTinPhieuNhap.add(lblTitleNgayNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, 20));
+
+        lblDonGia.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblDonGia.setForeground(new java.awt.Color(18, 18, 18));
+        lblDonGia.setText("123.456.789đ");
+        pnlThongTinPhieuNhap.add(lblDonGia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, 20));
+
+        lblTenSanPham.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblTenSanPham.setForeground(new java.awt.Color(18, 18, 18));
+        lblTenSanPham.setText("Tên sản phẩm");
+        pnlThongTinPhieuNhap.add(lblTenSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, 20));
+
+        lblSoLuong.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblSoLuong.setForeground(new java.awt.Color(18, 18, 18));
+        lblSoLuong.setText("12345");
+        pnlThongTinPhieuNhap.add(lblSoLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, -1, 20));
+
+        lblTitleTongTien.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleTongTien.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleTongTien.setText("Số lượng:");
+        pnlThongTinPhieuNhap.add(lblTitleTongTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, 20));
+
+        lblTitleMaPhieuNhao1.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleMaPhieuNhao1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleMaPhieuNhao1.setText("Mã sản phẩm:");
+        pnlThongTinPhieuNhap.add(lblTitleMaPhieuNhao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 100, 20));
+
+        lblTitleMaPhieuNhao2.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleMaPhieuNhao2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleMaPhieuNhao2.setText("Thể loại:");
+        pnlThongTinPhieuNhap.add(lblTitleMaPhieuNhao2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 60, 20));
+
+        lblTitleMaPhieuNhao3.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleMaPhieuNhao3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleMaPhieuNhao3.setText("Tác giả:");
+        pnlThongTinPhieuNhap.add(lblTitleMaPhieuNhao3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 50, 20));
+
+        lblTitleMaPhieuNhao4.setForeground(new java.awt.Color(0, 52, 102));
+        lblTitleMaPhieuNhao4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitleMaPhieuNhao4.setText("Nhà xuất bản:");
+        pnlThongTinPhieuNhap.add(lblTitleMaPhieuNhao4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 90, 20));
+
+        lblMaSanPham.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblMaSanPham.setForeground(new java.awt.Color(18, 18, 18));
+        lblMaSanPham.setText("12345");
+        pnlThongTinPhieuNhap.add(lblMaSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 20));
+
+        lblTheLoai.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblTheLoai.setForeground(new java.awt.Color(18, 18, 18));
+        lblTheLoai.setText("Tên thể loại");
+        pnlThongTinPhieuNhap.add(lblTheLoai, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, 20));
+
+        lblTacGia.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblTacGia.setForeground(new java.awt.Color(18, 18, 18));
+        lblTacGia.setText("Tên tác giả");
+        pnlThongTinPhieuNhap.add(lblTacGia, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, -1, 20));
+
+        lblNhaXuatBan.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblNhaXuatBan.setForeground(new java.awt.Color(18, 18, 18));
+        lblNhaXuatBan.setText("Tên NXB");
+        pnlThongTinPhieuNhap.add(lblNhaXuatBan, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, -1, 20));
+        pnlThongTinPhieuNhap.add(lblAnh, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 140, 130));
+
+        pnlThongTin.add(pnlThongTinPhieuNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 980, -1));
+
+        lblEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        lblEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEditMouseClicked(evt);
+            }
+        });
+        pnlThongTin.add(lblEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(955, 14, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/checked.png"))); // NOI18N
+        jLabel1.setText(" Năm nay");
+        pnlThongTin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 209, 91, -1));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/namtruoc.png"))); // NOI18N
+        jLabel2.setText("  Năm trước");
+        pnlThongTin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 232, 106, -1));
+
+        pnlChart.setPreferredSize(new java.awt.Dimension(970, 175));
+        pnlChart.setLayout(new javax.swing.BoxLayout(pnlChart, javax.swing.BoxLayout.LINE_AXIS));
+        pnlThongTin.add(pnlChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 254, 980, 210));
+
+        lblDoanhThuThangNay.setForeground(new java.awt.Color(218, 52, 52));
+        lblDoanhThuThangNay.setText("123");
+        pnlThongTin.add(lblDoanhThuThangNay, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, -1, -1));
+
+        jLabel5.setText("Sản phẩm bán tháng này:");
+        pnlThongTin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
+
+        jLabel6.setText("Tổng sản phẩm bán ra:");
+        pnlThongTin.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
+
+        lblTongSanPhamBanRa.setText("123456");
+        pnlThongTin.add(lblTongSanPhamBanRa, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, -1, -1));
+
+        lblSanPhamBanRaThangNay.setText("123");
+        pnlThongTin.add(lblSanPhamBanRaThangNay, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, -1, -1));
+
+        jLabel4.setText("Đến:");
+        pnlThongTin.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
+
+        jLabel7.setText("Doanh thu:");
+        pnlThongTin.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 550, -1, -1));
+
+        jLabel8.setText("Từ:");
+        pnlThongTin.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 490, -1, -1));
+
+        dateDen.setBackground(new java.awt.Color(238, 243, 247));
+        dateDen.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dateDenPropertyChange(evt);
+            }
+        });
+        pnlThongTin.add(dateDen, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 130, 30));
+
+        dateTu.setBackground(new java.awt.Color(238, 243, 247));
+        dateTu.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dateTuPropertyChange(evt);
+            }
+        });
+        pnlThongTin.add(dateTu, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 130, 30));
+
+        jLabel9.setText("Doanh thu tháng này:");
+        pnlThongTin.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
+
+        lblDoanhThu.setForeground(new java.awt.Color(218, 52, 52));
+        lblDoanhThu.setText("12345");
+        pnlThongTin.add(lblDoanhThu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, -1, -1));
+
+        lblTongDoanhThu.setForeground(new java.awt.Color(255, 0, 0));
+        lblTongDoanhThu.setText("12345");
+        pnlThongTin.add(lblTongDoanhThu, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 490, -1, -1));
+
+        lblSanPhamBanRa.setText("12345");
+        pnlThongTin.add(lblSanPhamBanRa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, -1, -1));
+
+        jLabel12.setText("Sản phẩm bán ra:");
+        pnlThongTin.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
+
+        jLabel13.setText("Tổng doanh thu:");
+        pnlThongTin.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 490, -1, -1));
+
+        jLabel14.setText("Sản phẩm bán tháng trước:");
+        pnlThongTin.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 520, -1, -1));
+
+        jLabel15.setText("Doanh thu tháng trước:");
+        pnlThongTin.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, -1, -1));
+
+        lblDoanhThuThangTruoc.setForeground(new java.awt.Color(218, 52, 52));
+        lblDoanhThuThangTruoc.setText("12345");
+        pnlThongTin.add(lblDoanhThuThangTruoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 550, -1, -1));
+
+        lblSanPhamBanThangTruoc.setText("12345");
+        pnlThongTin.add(lblSanPhamBanThangTruoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 520, -1, -1));
+
+        add(pnlThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 990, 610));
+
+        pnlQuayVe.setBackground(new java.awt.Color(238, 243, 247));
+        pnlQuayVe.setForeground(new java.awt.Color(0, 146, 242));
+        pnlQuayVe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlQuayVeMouseClicked(evt);
+            }
+        });
+
+        lblQuayVe2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblQuayVe2.setForeground(new java.awt.Color(255, 255, 255));
+        lblQuayVe2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-icon.png"))); // NOI18N
+        lblQuayVe2.setText("  Quay về");
+
+        javax.swing.GroupLayout pnlQuayVeLayout = new javax.swing.GroupLayout(pnlQuayVe);
+        pnlQuayVe.setLayout(pnlQuayVeLayout);
+        pnlQuayVeLayout.setHorizontalGroup(
+            pnlQuayVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuayVeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblQuayVe2, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlQuayVeLayout.setVerticalGroup(
+            pnlQuayVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblQuayVe2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+        );
+
+        add(pnlQuayVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void lblEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEditMouseClicked
+    if (SwingUtilities.isLeftMouseButton(evt)){
+        this.removeAll();
+        this.setLayout(new BorderLayout());
+        this.add(new SuaSanPhamJPanel());
+        this.validate();
+        this.repaint();
+    }
+    }//GEN-LAST:event_lblEditMouseClicked
+
+    private void pnlQuayVeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlQuayVeMouseClicked
+    if (SwingUtilities.isLeftMouseButton(evt)){
+        this.removeAll();
+        this.setLayout(new BorderLayout());
+        this.add(new SanPhamJPanel());
+        this.validate();
+        this.repaint();
+    }      // TODO add your handling code here:
+    }//GEN-LAST:event_pnlQuayVeMouseClicked
+
+    private void dateTuPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateTuPropertyChange
+        dateDen.setDate(dateTu.getDate());
+        dateDen.setMinSelectableDate(dateTu.getDate());
+    }//GEN-LAST:event_dateTuPropertyChange
+
+    private void dateDenPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dateDenPropertyChange
+        lblSanPhamBanRa.setText(changeCurrency(Integer.toString(SanPhamBanRaDoanhThuTuDen(currentSanPham.getMaSanPham(),dateTu.getDate(),dateDen.getDate())[0])));
+        lblDoanhThu.setText(changeCurrency(Integer.toString(SanPhamBanRaDoanhThuTuDen(currentSanPham.getMaSanPham(),dateTu.getDate(),dateDen.getDate())[1]))+"đ");
+       
+    }//GEN-LAST:event_dateDenPropertyChange
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser dateDen;
+    private com.toedter.calendar.JDateChooser dateTu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblAnh;
+    private javax.swing.JLabel lblDoanhThu;
+    private javax.swing.JLabel lblDoanhThuThangNay;
+    private javax.swing.JLabel lblDoanhThuThangTruoc;
+    private javax.swing.JLabel lblDonGia;
+    private javax.swing.JLabel lblEdit;
+    private javax.swing.JLabel lblMaSanPham;
+    private javax.swing.JLabel lblNhaXuatBan;
+    private javax.swing.JLabel lblQuayVe2;
+    private javax.swing.JLabel lblSanPhamBanRa;
+    private javax.swing.JLabel lblSanPhamBanRaThangNay;
+    private javax.swing.JLabel lblSanPhamBanThangTruoc;
+    private javax.swing.JLabel lblSoLuong;
+    private javax.swing.JLabel lblTacGia;
+    private javax.swing.JLabel lblTenSanPham;
+    private javax.swing.JLabel lblTheLoai;
+    private javax.swing.JLabel lblThongTinHoaDon;
+    private javax.swing.JLabel lblThongTinHoaDon1;
+    private javax.swing.JLabel lblTitleMaNhaCungCap;
+    private javax.swing.JLabel lblTitleMaPhieuNhao1;
+    private javax.swing.JLabel lblTitleMaPhieuNhao2;
+    private javax.swing.JLabel lblTitleMaPhieuNhao3;
+    private javax.swing.JLabel lblTitleMaPhieuNhao4;
+    private javax.swing.JLabel lblTitleNgayNhap;
+    private javax.swing.JLabel lblTitleTongTien;
+    private javax.swing.JLabel lblTongDoanhThu;
+    private javax.swing.JLabel lblTongSanPhamBanRa;
+    private javax.swing.JPanel pnlChart;
+    private GUI.Rounded pnlQuayVe;
+    private GUI.Rounded pnlThongTin;
+    private javax.swing.JPanel pnlThongTinPhieuNhap;
+    // End of variables declaration//GEN-END:variables
+}

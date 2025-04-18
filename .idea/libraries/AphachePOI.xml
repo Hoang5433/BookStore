@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="AphachePOI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AphachePOI/poi-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/stax-api-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/commons-codec-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/poi-ooxml-schemas-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/poi-ooxml-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/xmlbeans-2.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AphachePOI/xml-apis-1.0.b2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
