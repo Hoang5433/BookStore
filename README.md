@@ -1,36 +1,51 @@
 # BookStore Management System
 
-A Java-based desktop application designed to streamline the operations of a bookstore. The system helps manage inventory, customer records, and order processing with an intuitive graphical interface.
+A robust Java desktop application for managing bookstore operations, including inventory, sales, promotions, and reporting. The system features a modern GUI, role-based access, and integration with Excel/PDF for data import/export.
 
 ---
 
 ## 📖 Introduction
 
-The BookStore Management System is a desktop application built using Java to simplify the day-to-day operations of a bookstore. From managing inventory to processing sales, this application provides a user-friendly and efficient solution.
+The BookStore Management System streamlines bookstore workflows, from inventory and customer management to order processing and analytics. Built with Java Swing, it provides an intuitive interface for staff and administrators.
 
 ---
 
 ## ✨ Features
 
-- **Inventory Management**: Add, update, delete, and view book details.
-- **Customer Management**: Maintain customer profiles and transaction history.
-- **Order Processing**: Handle order creation, invoice generation, and order tracking.
-- **Search and Filter**: Quickly find books or customers with advanced search functionality.
-- **Reports**: Generate detailed reports on sales and inventory.
-- **Role-Based Access**: Secure login for administrators and staff.
-- **Cross-Platform Support**: Compatible with any system running Java Runtime Environment (JRE).
+- **Product Management:** Add, edit, delete, and search books by title, author, genre, and publisher.
+- **Customer Management:** Track customer profiles, contact info, and purchase history.
+- **Order Management:** Create, update, and track orders; generate invoices and receipts.
+- **Promotion Management:** Manage discount codes and promotional campaigns.
+- **Employee Management:** Add and manage staff accounts with role-based permissions.
+- **Statistics & Reporting:** Generate sales, inventory, and promotion reports; export to Excel/PDF.
+- **Data Import/Export:** Import/export data using Excel files; generate PDF invoices.
+- **Secure Authentication:** Login system with roles (admin, staff).
+- **User-Friendly GUI:** Built with Java Swing for cross-platform compatibility.
 
 ---
 
 ## 🗄️ Database Design
 
-The application uses a relational database for data management. The key tables include:
+The system uses a relational database (e.g., MySQL). Key tables include:
 
-1. **Books**: Stores details like title, author, genre, price, and stock quantity.
-2. **Customers**: Contains customer information such as name, email, and contact details.
-3. **Orders**: Tracks order details including order date, total amount, and status.
-4. **Order_Items**: Links books to orders with quantities.
-5. **Users**: Manages credentials and roles for administrators and staff.
+- **SANPHAM:** Book details (title, author, genre, price, stock, etc.)
+- **KHACHHANG:** Customer information.
+- **DONHANG:** Orders and sales.
+- **CHITIETDONHANG:** Order line items.
+- **NHANVIEN:** Employee records.
+- **TAIKHOAN:** User accounts and roles.
+- **KHUYENMAI / CHITIETKHUYENMAI:** Promotions and discount codes.
+- **THELOAI, TACGIA, NHAXUATBAN:** Book categories, authors, publishers.
+
+See [`quanlycuahangsach.sql`](quanlycuahangsach.sql) for full schema.
+
+---
+
+## 📁 Project Structure
+
+- `src/` — Java source code (BUS, DAO, DTO, GUI, IO, etc.)
+- `AphachePOI/`, `iText/` — External libraries for Excel/PDF.
+- `quanlycuahangsach.sql` — Database schema and sample data.
 
 ---
 
@@ -38,13 +53,57 @@ The application uses a relational database for data management. The key tables i
 
 ### Prerequisites
 
-- **Java Development Kit (JDK)** version 11 or higher.
-- **Integrated Development Environment (IDE)** (e.g., IntelliJ IDEA, Eclipse, NetBeans).
-- **Database Management System** (e.g., MySQL, PostgreSQL).
-- **JavaFX** (if not bundled with your JDK).
+- Java JDK 11 or higher
+- MySQL or compatible RDBMS
+- Java IDE (e.g., VS Code, IntelliJ, Eclipse)
+- [Apache POI](https://poi.apache.org/) and [iText](https://itextpdf.com/) libraries
 
 ### Steps
 
-1. **Clone the Repository**:
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/bookstore-java-desktop.git
+   git clone <your-repo-url>
+   ```
+2. **Import the project** into your Java IDE.
+3. **Install dependencies:**  
+   Add Apache POI and iText JARs to your project's classpath.
+4. **Set up the database:**
+   - Create a database (e.g., `quanlycuahangsach`).
+   - Import [`quanlycuahangsach.sql`](quanlycuahangsach.sql).
+   - Update database connection settings in [`Database.java`](src/Database/Database.java).
+5. **Build and run:**
+   - Run `main.java` in [`src/quanlycuahangsach/main.java`](src/quanlycuahangsach/main.java).
+   - Login with a valid account.
+
+---
+
+## 🧪 Testing
+
+- Unit tests can be added under the `test/` directory (if available).
+- Manual testing via the GUI is recommended for most features.
+
+---
+
+## 📦 Dependencies
+
+- [Apache POI](https://poi.apache.org/) — Excel import/export
+- [iText](https://itextpdf.com/) — PDF generation
+- MySQL Connector/J — Database connectivity
+
+---
+
+## 🤝 Contributing
+
+Pull requests and bug reports are welcome! Please open an issue or submit a PR.
+
+---
+
+## 📄 License
+
+This project is for educational purposes. Add your license here if needed.
+
+---
+
+## 📬 Contact
+
+For questions or support, contact the project maintainer.
