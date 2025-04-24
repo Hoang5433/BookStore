@@ -62,7 +62,7 @@ See [`quanlycuahangsach.sql`](quanlycuahangsach.sql) for full schema.
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone [<your-repo-url>](https://github.com/Hoang5433/BookStore.git)
    ```
 2. **Import the project** into your Java IDE.
 3. **Install dependencies:**  
