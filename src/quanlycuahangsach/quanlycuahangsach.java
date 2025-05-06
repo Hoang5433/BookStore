@@ -223,7 +223,7 @@ public class quanlycuahangsach extends javax.swing.JFrame {
             .addGroup(pnlLogoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlSidebar.add(pnlLogo);
@@ -242,8 +242,8 @@ public class quanlycuahangsach extends javax.swing.JFrame {
             pnlTongQuanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTongQuanLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(lblTongQuan, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addComponent(lblTongQuan, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         pnlTongQuanLayout.setVerticalGroup(
             pnlTongQuanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -497,8 +497,8 @@ public class quanlycuahangsach extends javax.swing.JFrame {
             pnlThemTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlThemTaiKhoanLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblThemTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addComponent(lblThemTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         pnlThemTaiKhoanLayout.setVerticalGroup(
             pnlThemTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,7 +536,7 @@ public class quanlycuahangsach extends javax.swing.JFrame {
 
         bg.add(pnlSidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 239, 750));
 
-        pnlHeader.setBackground(new java.awt.Color(238, 243, 247));
+        pnlHeader.setBackground(new java.awt.Color(239, 255, 242));
         pnlHeader.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(185, 194, 202)));
         pnlHeader.setForeground(new java.awt.Color(0, 52, 102));
         pnlHeader.setPreferredSize(new java.awt.Dimension(1200, 71));
@@ -560,7 +560,7 @@ public class quanlycuahangsach extends javax.swing.JFrame {
             }
         });
 
-        pnlNameUser1.setBackground(new java.awt.Color(238, 243, 247));
+        pnlNameUser1.setBackground(new java.awt.Color(239, 255, 242));
 
         lblName1.setBackground(new java.awt.Color(135, 135, 135));
         lblName1.setFont(new java.awt.Font("#9Slide03 Source Sans Pro", 0, 14)); // NOI18N
@@ -629,7 +629,7 @@ public class quanlycuahangsach extends javax.swing.JFrame {
 
         bg.add(pnlHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1040, 60));
 
-        pnlView.setBackground(new java.awt.Color(238, 243, 247));
+        pnlView.setBackground(new java.awt.Color(239, 255, 242));
 
         javax.swing.GroupLayout pnlViewLayout = new javax.swing.GroupLayout(pnlView);
         pnlView.setLayout(pnlViewLayout);
