@@ -134,8 +134,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="lblTongQuan" min="-2" pref="105" max="-2" attributes="0"/>
-                          <EmptySpace pref="93" max="32767" attributes="0"/>
+                          <Component id="lblTongQuan" min="-2" pref="122" max="-2" attributes="0"/>
+                          <EmptySpace pref="76" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -579,8 +579,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="lblThemTaiKhoan" min="-2" pref="134" max="-2" attributes="0"/>
-                          <EmptySpace pref="65" max="32767" attributes="0"/>
+                          <Component id="lblThemTaiKhoan" min="-2" pref="152" max="-2" attributes="0"/>
+                          <EmptySpace pref="47" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -655,7 +655,7 @@
         <Container class="javax.swing.JPanel" name="pnlHeader">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f3" red="ee" type="rgb"/>
+              <Color blue="f2" green="ff" red="ef" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -725,7 +725,7 @@
             <Container class="javax.swing.JPanel" name="pnlNameUser1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f7" green="f3" red="ee" type="rgb"/>
+                  <Color blue="f2" green="ff" red="ef" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -805,7 +805,7 @@
         <Container class="javax.swing.JPanel" name="pnlView">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f3" red="ee" type="rgb"/>
+              <Color blue="f2" green="ff" red="ef" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
