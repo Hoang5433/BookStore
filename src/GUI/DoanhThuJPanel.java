@@ -77,9 +77,9 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
     }
     public void setComboBox(){
         String[] namthang = {"2020","2019","2018","2017"};
-        SweetComboBox cbxNamThang = new SweetComboBox("#CAE5F6","#181818",0,0,150,30,namthang);
+        SweetComboBox cbxNamThang = new SweetComboBox("#acf2a7","#181818",0,0,150,30,namthang);
         String[] thang = {"01","02","03","04","05","06","07","08","09","10","11","12"};
-        SweetComboBox cbxThang = new SweetComboBox("#CAE5F6","#181818",0,0,150,30,thang);
+        SweetComboBox cbxThang = new SweetComboBox("#acf2a7","#181818",0,0,150,30,thang);
         pnlNamThang.add(cbxNamThang);
         pnlThang.add(cbxThang);
         cbxNamThang.addItemListener(new ItemListener() {
@@ -153,9 +153,9 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         
         
         String[] namquy = {"2020","2019","2018","2017"};
-        cbxNamQuy = new SweetComboBox("#CAE5F6","#181818",0,0,150,30,namquy);   
+        cbxNamQuy = new SweetComboBox("#acf2a7","#181818",0,0,150,30,namquy);   
         String[] quy = {"1","2","3","4"};
-        SweetComboBox cbxQuy = new SweetComboBox("#CAE5F6","#181818",0,0,150,30,quy);
+        SweetComboBox cbxQuy = new SweetComboBox("#acf2a7","#181818",0,0,150,30,quy);
         pnlNamQuy.add(cbxNamQuy);
         pnlQuy.add(cbxQuy);
         cbxNamQuy.addItemListener(new ItemListener() {
@@ -227,7 +227,7 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         
         
         String[] nam = {"2019","2018","2017","2016"};
-        cbxNam = new SweetComboBox("#CAE5F6","#181818",0,0,150,30,nam);  
+        cbxNam = new SweetComboBox("#acf2a7","#181818",0,0,150,30,nam);  
         pnlNam.add(cbxNam);
         cbxNam.addItemListener(new ItemListener() {
             @Override
@@ -355,11 +355,11 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         lblNguoiDung3 = new javax.swing.JLabel();
         pgbThangNay = new GUI.ProgressBarJPanel("#ffffff","#f8cf61","#f8ebc9");
 
-        setBackground(new java.awt.Color(238, 243, 247));
+        setBackground(new java.awt.Color(239, 255, 242));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlThongKe.setBackground(new java.awt.Color(238, 243, 247));
-        pnlThongKe.setForeground(new java.awt.Color(238, 243, 247));
+        pnlThongKe.setBackground(new java.awt.Color(239, 255, 242));
+        pnlThongKe.setForeground(new java.awt.Color(239, 255, 242));
         pnlThongKe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNgay.setFont(new java.awt.Font("#9Slide03 Source Sans Pro", 1, 14)); // NOI18N
@@ -481,8 +481,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         lblNgay8.setText("Quý:");
         pnlThongKe.add(lblNgay8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, 30));
 
-        pnlNamThang.setBackground(new java.awt.Color(202, 229, 246));
-        pnlNamThang.setForeground(new java.awt.Color(202, 229, 246));
+        pnlNamThang.setBackground(new java.awt.Color(172, 242, 167));
+        pnlNamThang.setForeground(new java.awt.Color(172, 242, 167));
         pnlNamThang.setPreferredSize(new java.awt.Dimension(150, 30));
 
         javax.swing.GroupLayout pnlNamThangLayout = new javax.swing.GroupLayout(pnlNamThang);
@@ -498,8 +498,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         pnlThongKe.add(pnlNamThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 150, 30));
 
-        pnlThang.setBackground(new java.awt.Color(202, 229, 246));
-        pnlThang.setForeground(new java.awt.Color(202, 229, 246));
+        pnlThang.setBackground(new java.awt.Color(172, 242, 167));
+        pnlThang.setForeground(new java.awt.Color(172, 242, 167));
         pnlThang.setPreferredSize(new java.awt.Dimension(150, 30));
 
         javax.swing.GroupLayout pnlThangLayout = new javax.swing.GroupLayout(pnlThang);
@@ -515,8 +515,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         pnlThongKe.add(pnlThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
-        pnlQuy.setBackground(new java.awt.Color(202, 229, 246));
-        pnlQuy.setForeground(new java.awt.Color(202, 229, 246));
+        pnlQuy.setBackground(new java.awt.Color(172, 242, 167));
+        pnlQuy.setForeground(new java.awt.Color(172, 242, 167));
         pnlQuy.setPreferredSize(new java.awt.Dimension(150, 30));
 
         javax.swing.GroupLayout pnlQuyLayout = new javax.swing.GroupLayout(pnlQuy);
@@ -532,8 +532,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         pnlThongKe.add(pnlQuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
 
-        pnlNamQuy.setBackground(new java.awt.Color(202, 229, 246));
-        pnlNamQuy.setForeground(new java.awt.Color(202, 229, 246));
+        pnlNamQuy.setBackground(new java.awt.Color(172, 242, 167));
+        pnlNamQuy.setForeground(new java.awt.Color(172, 242, 167));
         pnlNamQuy.setPreferredSize(new java.awt.Dimension(150, 30));
 
         javax.swing.GroupLayout pnlNamQuyLayout = new javax.swing.GroupLayout(pnlNamQuy);
@@ -549,8 +549,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         pnlThongKe.add(pnlNamQuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
-        pnlNam.setBackground(new java.awt.Color(202, 229, 246));
-        pnlNam.setForeground(new java.awt.Color(202, 229, 246));
+        pnlNam.setBackground(new java.awt.Color(172, 242, 167));
+        pnlNam.setForeground(new java.awt.Color(172, 242, 167));
         pnlNam.setPreferredSize(new java.awt.Dimension(150, 30));
 
         javax.swing.GroupLayout pnlNamLayout = new javax.swing.GroupLayout(pnlNam);
@@ -584,12 +584,12 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         pnlThongKe.add(lblChiNamThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, -1, -1));
 
         lblLoiNhuanNamThang.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        lblLoiNhuanNamThang.setForeground(new java.awt.Color(37, 213, 54));
+        lblLoiNhuanNamThang.setForeground(new java.awt.Color(37, 152, 8));
         lblLoiNhuanNamThang.setText("123456");
         pnlThongKe.add(lblLoiNhuanNamThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, -1, -1));
 
         lblLoiNhuanNamQuy.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        lblLoiNhuanNamQuy.setForeground(new java.awt.Color(37, 213, 54));
+        lblLoiNhuanNamQuy.setForeground(new java.awt.Color(37, 152, 8));
         lblLoiNhuanNamQuy.setText("123456");
         pnlThongKe.add(lblLoiNhuanNamQuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, -1, -1));
 
@@ -612,11 +612,11 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         pnlThongKe.add(lblChiNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, -1));
 
         lblLoiNhuanNam.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        lblLoiNhuanNam.setForeground(new java.awt.Color(37, 213, 54));
+        lblLoiNhuanNam.setForeground(new java.awt.Color(37, 152, 8));
         lblLoiNhuanNam.setText("123456");
         pnlThongKe.add(lblLoiNhuanNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, -1, -1));
 
-        pnlXuatExcelNamQuy.setBackground(new java.awt.Color(0, 146, 242));
+        pnlXuatExcelNamQuy.setBackground(new java.awt.Color(0, 204, 0));
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -631,26 +631,20 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         pnlXuatExcelNamQuy.setLayout(pnlXuatExcelNamQuyLayout);
         pnlXuatExcelNamQuyLayout.setHorizontalGroup(
             pnlXuatExcelNamQuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-            .addGroup(pnlXuatExcelNamQuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlXuatExcelNamQuyLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXuatExcelNamQuyLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlXuatExcelNamQuyLayout.setVerticalGroup(
             pnlXuatExcelNamQuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-            .addGroup(pnlXuatExcelNamQuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlXuatExcelNamQuyLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXuatExcelNamQuyLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pnlThongKe.add(pnlXuatExcelNamQuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 240, 70, 20));
 
-        pnlXuatExcelNam.setBackground(new java.awt.Color(0, 146, 242));
+        pnlXuatExcelNam.setBackground(new java.awt.Color(0, 204, 0));
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -665,29 +659,23 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
         pnlXuatExcelNam.setLayout(pnlXuatExcelNamLayout);
         pnlXuatExcelNamLayout.setHorizontalGroup(
             pnlXuatExcelNamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-            .addGroup(pnlXuatExcelNamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlXuatExcelNamLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXuatExcelNamLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlXuatExcelNamLayout.setVerticalGroup(
             pnlXuatExcelNamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-            .addGroup(pnlXuatExcelNamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlXuatExcelNamLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXuatExcelNamLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pnlThongKe.add(pnlXuatExcelNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 300, 70, 20));
 
         add(pnlThongKe, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 980, 330));
 
-        pnlShowChart.setBackground(new java.awt.Color(238, 243, 247));
-        pnlShowChart.setForeground(new java.awt.Color(238, 243, 247));
+        pnlShowChart.setBackground(new java.awt.Color(239, 255, 242));
+        pnlShowChart.setForeground(new java.awt.Color(239, 255, 242));
 
         pnlChart.setLayout(new javax.swing.BoxLayout(pnlChart, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -709,8 +697,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         add(pnlShowChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 980, 200));
 
-        pnlNguoiDung1.setBackground(new java.awt.Color(238, 243, 247));
-        pnlNguoiDung1.setForeground(new java.awt.Color(238, 243, 247));
+        pnlNguoiDung1.setBackground(new java.awt.Color(239, 255, 242));
+        pnlNguoiDung1.setForeground(new java.awt.Color(239, 255, 242));
         pnlNguoiDung1.setPreferredSize(new java.awt.Dimension(279, 120));
 
         lblSoLuongDoanhThuHomNay.setFont(new java.awt.Font("#9Slide03 Source Sans Pro", 0, 22)); // NOI18N
@@ -764,8 +752,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         add(pnlNguoiDung1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, 120));
 
-        pnlNguoiDung2.setBackground(new java.awt.Color(238, 243, 247));
-        pnlNguoiDung2.setForeground(new java.awt.Color(238, 243, 247));
+        pnlNguoiDung2.setBackground(new java.awt.Color(239, 255, 242));
+        pnlNguoiDung2.setForeground(new java.awt.Color(239, 255, 242));
         pnlNguoiDung2.setPreferredSize(new java.awt.Dimension(279, 120));
 
         lblSoLuongDoanhThuTuanNay.setFont(new java.awt.Font("#9Slide03 Source Sans Pro", 0, 22)); // NOI18N
@@ -819,8 +807,8 @@ public class DoanhThuJPanel extends javax.swing.JPanel {
 
         add(pnlNguoiDung2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, -1));
 
-        pnlNguoiDung3.setBackground(new java.awt.Color(238, 243, 247));
-        pnlNguoiDung3.setForeground(new java.awt.Color(238, 243, 247));
+        pnlNguoiDung3.setBackground(new java.awt.Color(239, 255, 242));
+        pnlNguoiDung3.setForeground(new java.awt.Color(239, 255, 242));
         pnlNguoiDung3.setPreferredSize(new java.awt.Dimension(279, 120));
 
         lblSoLuongDoanhThuThangNay.setFont(new java.awt.Font("#9Slide03 Source Sans Pro", 0, 22)); // NOI18N
